@@ -1,0 +1,35 @@
+# ===== 虚拟环境 / 依赖 =====
+searxng-venv/
+venv/
+.env
+node_modules/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+coverage/
+
+# ===== 构建 / 缓存 =====
+build/
+dist/
+cache/
+local/
+gh-pages/
+
+# ===== 日志 / 编辑器 =====
+*.log
+geckodriver.log
+*~
+*.swp
+.idea/
+.dir-locals.el
+
+# ===== SearXNG 运行时生成 =====
+searxng-src/searx/version_frozen.py
+.python-version
+
+# ===== 本地笔记（不入库）=====
+doc/

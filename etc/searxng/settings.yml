@@ -1,0 +1,28 @@
+# SearXNG 本地研究配置
+# 仅监听本机回环地址，只启用 Bing 引擎（国内可用）
+use_default_settings:
+  engines:
+    keep_only:
+      - bing
+
+server:
+  secret_key: "948c43217a31d9d8865a29b81f8e4f6a4f8ac6a7060b3e793eb522c318693f27"
+  bind_address: "127.0.0.1"   # 只监听本机
+  port: 8888
+  limiter: false              # 私有实例关闭限流
+  image_proxy: true
+
+search:
+  formats:
+    - html
+    - json                    # 支持 /search?format=json 程序化调用
+
+engines:
+  - name: bing
+    disabled: false           # 默认配置中 bing 是禁用的，这里显式启用
+    base_url: "https://cn.bing.com"   # 国内实例使用 cn.bing.com
+
+outgoing:
+  networks:
+    fetch:                    # /fetch 专用网络，允许 http（引擎仍用默认 https-only 网络）
+      enable_http: true
